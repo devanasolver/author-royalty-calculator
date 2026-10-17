@@ -3,17 +3,31 @@ requires = ["setuptools>=68.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "author-royalty-calculator"
-version = "0.1.0"
-description = "See exactly what you keep per book sale on KDP, Kobo, Apple Books, Barnes & Noble - and on your own author website."
+name = "kdp-toolkit"
+version = "1.0.0"
+description = "All-in-one free toolkit for Amazon KDP: print-ready interior PDF, cover wrap PDF with exact spine math, preflight validator, keywords, metadata checks, royalty math, ads quick-start."
 readme = "README.md"
 license = {text = "MIT"}
 requires-python = ">=3.10"
 authors = [{name = "Anas Solver", email = "hello@bookfolio.pages.dev"}]
-keywords = ["kdp", "royalties", "self-publishing", "author", "books"]
+keywords = ["kdp", "amazon", "self-publishing", "kindle", "paperback",
+            "book-formatting", "cover-generator", "royalties", "author"]
+dependencies = [
+    "reportlab>=4.0",
+    "pypdf>=4.0",
+    "Pillow>=10.0",
+]
+
+[project.optional-dependencies]
+reports = ["openpyxl>=3.1"]
+dev = ["pytest>=8.0", "openpyxl>=3.1"]
 
 [project.scripts]
-royalties = "author_royalties.cli:main"
+kdp = "kdp_toolkit.cli:main"
+royalties = "kdp_toolkit.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.setuptools.package-data]
+kdp_toolkit = ["fonts/*.ttf", "fonts/OFL.txt"]

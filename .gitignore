@@ -2,6 +2,9 @@
 __pycache__/
 *.egg-info/
 dist/
+build/
 .env
 client_secrets.json
 token*.json
+*.pyc
+.kdp-session/
