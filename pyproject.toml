@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "author-royalty-calculator"
+version = "0.1.0"
+description = "See exactly what you keep per book sale on KDP, Kobo, Apple Books, Barnes & Noble - and on your own author website."
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [{name = "Anas Solver", email = "hello@bookfolio.pages.dev"}]
+keywords = ["kdp", "royalties", "self-publishing", "author", "books"]
+
+[project.scripts]
+royalties = "author_royalties.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
