@@ -8,6 +8,8 @@ No account connection, no API keys, no paid services. It runs on your computer a
 
 ![royalties demo](docs/demo-royalty.png)
 
+![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue) ![23 tests passing](https://img.shields.io/badge/tests-23%20passing-brightgreen) ![License: MIT](https://img.shields.io/badge/license-MIT-green) ![No API keys](https://img.shields.io/badge/API%20keys-none-orange)
+
 Made by the team behind [BookFolio](https://bookfolio-demo.pages.dev), the WordPress theme that turns an author website into a real bookstore. This toolkit gets your book onto Amazon; BookFolio is how you sell it from your own site and keep ~94%.
 
 ---
@@ -39,13 +41,15 @@ kdp interior mybook/manuscript.md --title "My Book" --author "Your Name" -o mybo
 
 A print-ready interior PDF: real book margins (the gutter grows with your page count, as KDP requires), chapters starting on right-hand pages, page numbers, and an embedded book font.
 
-![interior page](docs/interior-page-03.png)
+![interior pages](docs/interior-preview.png)
 
 ```bash
 kdp cover --title "My Book" --author "Your Name" --pages 120 --back-text "A short pitch for the back cover." -o mybook/cover.pdf
 ```
 
-The full cover wrap - front, spine, back - at the exact size KDP wants, spine width calculated from your page count and paper type. Add `--front-image myart.png` for a real cover image. Add `--guides` to get a checking copy with trim, spine, and barcode lines drawn on it (never upload the guides version).
+The full cover wrap - front, spine, back - at the exact size KDP wants, spine width calculated from your page count and paper type. Add `--front-image myart.png` for a real cover image. Add `--guides` to get a checking copy with trim, spine, and barcode lines drawn on it (never upload the guides version):
+
+![cover with guides](docs/cover-guides-1.png)
 
 ```bash
 kdp validate mybook/interior.pdf
